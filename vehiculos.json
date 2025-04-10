@@ -1,0 +1,787 @@
+[
+ {
+  "Placa": "TPY461",
+  "Tipo": "BUSETA",
+  "Modelo": 2007,
+  "Capacidad": 35,
+  "Propietario": "BUSES Y RUTAS S.A.S "
+ },
+ {
+  "Placa": "TSI021",
+  "Tipo": "BUSETA",
+  "Modelo": 2009,
+  "Capacidad": 38,
+  "Propietario": "BUSES Y RUTAS S.A.S "
+ },
+ {
+  "Placa": "TSJ560",
+  "Tipo": "BUSETA",
+  "Modelo": 2009,
+  "Capacidad": 35,
+  "Propietario": "BUSES Y RUTAS S.A.S "
+ },
+ {
+  "Placa": "EQR993",
+  "Tipo": "BUS",
+  "Modelo": 2017,
+  "Capacidad": 60,
+  "Propietario": "DESARROLLOS Y PROGRESOS SAS "
+ },
+ {
+  "Placa": "TPW386",
+  "Tipo": "BUSETA",
+  "Modelo": 2007,
+  "Capacidad": 35,
+  "Propietario": "BUSES Y RUTAS S.A.S "
+ },
+ {
+  "Placa": "SMT896",
+  "Tipo": "BUS",
+  "Modelo": 2010,
+  "Capacidad": 50,
+  "Propietario": "ARGEMIRO DE JESUS MARTINEZ CLAVIJO"
+ },
+ {
+  "Placa": "EQT486",
+  "Tipo": "BUS",
+  "Modelo": 2014,
+  "Capacidad": 56,
+  "Propietario": "DAIRO DE JESUS VASCO CEBALLOS JORGE HERNAN QUINTERO CORREA DAIRO DE JESUS VASCO CEBALLOS"
+ },
+ {
+  "Placa": "TPV293",
+  "Tipo": "BUSETA",
+  "Modelo": 2006,
+  "Capacidad": 35,
+  "Propietario": "BUSES Y RUTAS S.A.S "
+ },
+ {
+  "Placa": "TSG556",
+  "Tipo": "BUSETA",
+  "Modelo": 2009,
+  "Capacidad": 30,
+  "Propietario": "MARIANA ZULUAGA DUQUE"
+ },
+ {
+  "Placa": "EQS219",
+  "Tipo": "BUS",
+  "Modelo": 2018,
+  "Capacidad": 62,
+  "Propietario": "BUSES Y RUTAS S.A.S "
+ },
+ {
+  "Placa": "TSY870",
+  "Tipo": "BUS",
+  "Modelo": 2013,
+  "Capacidad": 32,
+  "Propietario": "BUSES Y RUTAS S.A.S "
+ },
+ {
+  "Placa": "TSE193",
+  "Tipo": "BUSETA",
+  "Modelo": 2008,
+  "Capacidad": 30,
+  "Propietario": "PROSPERO DE JESUS VERGARA VASQUEZ"
+ },
+ {
+  "Placa": "TSH519",
+  "Tipo": "BUSETA",
+  "Modelo": 2009,
+  "Capacidad": 30,
+  "Propietario": "JUAN FELIPE ZULUAGA RAMIREZ"
+ },
+ {
+  "Placa": "TSY725",
+  "Tipo": "BUS",
+  "Modelo": 2013,
+  "Capacidad": 69,
+  "Propietario": "BUSES Y RUTAS S.A.S "
+ },
+ {
+  "Placa": "EQS021",
+  "Tipo": "BUS",
+  "Modelo": 2018,
+  "Capacidad": 45,
+  "Propietario": "BUSES Y RUTAS S.A.S "
+ },
+ {
+  "Placa": "WDX404",
+  "Tipo": "BUS",
+  "Modelo": 2014,
+  "Capacidad": 57,
+  "Propietario": "JUAN FELIPE ZULUAGA RAMIREZ"
+ },
+ {
+  "Placa": "EQR997",
+  "Tipo": "BUS",
+  "Modelo": 2017,
+  "Capacidad": 62,
+  "Propietario": "NADIA JULIANA GOMEZ BELTRAN"
+ },
+ {
+  "Placa": "EQS995",
+  "Tipo": "BUS",
+  "Modelo": 2018,
+  "Capacidad": 28,
+  "Propietario": "EDGAR DE JESUS AGUDELO MORALES"
+ },
+ {
+  "Placa": "EQT504",
+  "Tipo": "BUS",
+  "Modelo": 2018,
+  "Capacidad": 56,
+  "Propietario": "LUIS ARTURO MONTOYA GIRALDO"
+ },
+ {
+  "Placa": "TSJ401",
+  "Tipo": "BUS",
+  "Modelo": 2010,
+  "Capacidad": 31,
+  "Propietario": "ALDEMAR DE JESUS GIRALDO MONTOYA"
+ },
+ {
+  "Placa": "EQW271",
+  "Tipo": "BUS",
+  "Modelo": 2014,
+  "Capacidad": 35,
+  "Propietario": "NELSON DE JESUS GIL MONTOYA"
+ },
+ {
+  "Placa": "TPU250",
+  "Tipo": "BUSETA",
+  "Modelo": 2006,
+  "Capacidad": 35,
+  "Propietario": "BUSES Y RUTAS S.A.S "
+ },
+ {
+  "Placa": "TSE769",
+  "Tipo": "BUSETA",
+  "Modelo": 2008,
+  "Capacidad": 35,
+  "Propietario": "BUSES Y RUTAS S.A.S "
+ },
+ {
+  "Placa": "TSK523",
+  "Tipo": "BUS",
+  "Modelo": 2009,
+  "Capacidad": 30,
+  "Propietario": "JOSE ARCESIO GOMEZ GIRALDO"
+ },
+ {
+  "Placa": "TPW147",
+  "Tipo": "BUSETA",
+  "Modelo": 2007,
+  "Capacidad": 47,
+  "Propietario": "DORALBA DUQUE GOMEZ"
+ },
+ {
+  "Placa": "SMV802",
+  "Tipo": "BUS",
+  "Modelo": 2011,
+  "Capacidad": 69,
+  "Propietario": "GUSTAVO ADOLFO SALAZAR GARCIA"
+ },
+ {
+  "Placa": "TSI918",
+  "Tipo": "BUSETA",
+  "Modelo": 2009,
+  "Capacidad": 35,
+  "Propietario": "BUSES Y RUTAS S.A.S "
+ },
+ {
+  "Placa": "TSE545",
+  "Tipo": "BUSETA",
+  "Modelo": 2008,
+  "Capacidad": 35,
+  "Propietario": "BUSES Y RUTAS S.A.S "
+ },
+ {
+  "Placa": "SMV021",
+  "Tipo": "BUS",
+  "Modelo": 2010,
+  "Capacidad": 54,
+  "Propietario": "BUSES Y RUTAS S.A.S "
+ },
+ {
+  "Placa": "TPY306",
+  "Tipo": "BUSETA",
+  "Modelo": 2007,
+  "Capacidad": 47,
+  "Propietario": "JUAN FELIPE ZULUAGA RAMIREZ"
+ },
+ {
+  "Placa": "TSY794",
+  "Tipo": "BUS",
+  "Modelo": 2013,
+  "Capacidad": 37,
+  "Propietario": "BUSES Y RUTAS S.A.S "
+ },
+ {
+  "Placa": "STV612",
+  "Tipo": "BUS",
+  "Modelo": 2012,
+  "Capacidad": 35,
+  "Propietario": "CLAVIJO NOREÑA DAMIAN ESTEBAN"
+ },
+ {
+  "Placa": "TSG893",
+  "Tipo": "BUS",
+  "Modelo": 2009,
+  "Capacidad": 31,
+  "Propietario": "JOHN HENRY GARCIA BOTERO"
+ },
+ {
+  "Placa": "TSI191",
+  "Tipo": "BUS",
+  "Modelo": 2009,
+  "Capacidad": 61,
+  "Propietario": "JOSE ALVARO VASQUEZ CARDONA"
+ },
+ {
+  "Placa": "EQW431",
+  "Tipo": "BUS",
+  "Modelo": 2019,
+  "Capacidad": 63,
+  "Propietario": "FRANCISCO JAVIER GIRALDO OSSA"
+ },
+ {
+  "Placa": "TSE779",
+  "Tipo": "BUS",
+  "Modelo": 2008,
+  "Capacidad": 61,
+  "Propietario": "YENNY ANDREA HERNANDEZ BLANDON FABER ALBERTO QUINTERO ZULUAGA"
+ },
+ {
+  "Placa": "SMT664",
+  "Tipo": "BUS",
+  "Modelo": 2010,
+  "Capacidad": 54,
+  "Propietario": "JUAN FELIPE ZULUAGA RAMIREZ"
+ },
+ {
+  "Placa": "TPU783",
+  "Tipo": "BUSETA",
+  "Modelo": 2006,
+  "Capacidad": 30,
+  "Propietario": "JULIAN ANDRES CLAVIJO NOREÑA"
+ },
+ {
+  "Placa": "TSG527",
+  "Tipo": "BUS",
+  "Modelo": 2009,
+  "Capacidad": 31,
+  "Propietario": "HERNANDO ANTONIO MARTINEZ CAICEDO"
+ },
+ {
+  "Placa": "TPV338",
+  "Tipo": "BUS",
+  "Modelo": 2006,
+  "Capacidad": 61,
+  "Propietario": "DISTRIBUIDORA DE LICORES MARTI "
+ },
+ {
+  "Placa": "TSE553",
+  "Tipo": "N.A.",
+  "Modelo": 2008,
+  "Capacidad": 69,
+  "Propietario": "WILSON DE JESUS Y OTRO QUINTERO ZULUAGA"
+ },
+ {
+  "Placa": "TSH271",
+  "Tipo": "BUS",
+  "Modelo": 2009,
+  "Capacidad": 74,
+  "Propietario": "JULIAN ANDRES CLAVIJO NOREÑA"
+ },
+ {
+  "Placa": "STV698",
+  "Tipo": "BUS",
+  "Modelo": 2012,
+  "Capacidad": 36,
+  "Propietario": "CARLOS ALBEIRO ALZATE CARDONA"
+ },
+ {
+  "Placa": "STW602",
+  "Tipo": "BUS",
+  "Modelo": 2013,
+  "Capacidad": 33,
+  "Propietario": "BUSES Y RUTAS S.A.S "
+ },
+ {
+  "Placa": "TPU379",
+  "Tipo": "BUSETA",
+  "Modelo": 2006,
+  "Capacidad": 35,
+  "Propietario": "BUSES Y RUTAS S.A.S "
+ },
+ {
+  "Placa": "STW894",
+  "Tipo": "BUS",
+  "Modelo": 2013,
+  "Capacidad": 61,
+  "Propietario": "JUAN FELIPE ZULUAGA RAMIREZ COMPAÑIA METROPOLITANA DE BUSE"
+ },
+ {
+  "Placa": "FWK177",
+  "Tipo": "BUS",
+  "Modelo": 2019,
+  "Capacidad": 28,
+  "Propietario": "JOSÉ MARIO GARCÍA LOPEZ"
+ },
+ {
+  "Placa": "TPU952",
+  "Tipo": "BUSETA",
+  "Modelo": 2006,
+  "Capacidad": 35,
+  "Propietario": "BUSES Y RUTAS S.A.S "
+ },
+ {
+  "Placa": "SMT831",
+  "Tipo": "BUS",
+  "Modelo": 2011,
+  "Capacidad": 31,
+  "Propietario": "YENNY ANDREA HERNANDEZ BLANDON JUAN FELIPE ZULUAGA RAMIREZ"
+ },
+ {
+  "Placa": "TSI900",
+  "Tipo": "BUSETA",
+  "Modelo": 2009,
+  "Capacidad": 35,
+  "Propietario": "BUSES Y RUTAS S.A.S "
+ },
+ {
+  "Placa": "FWK733",
+  "Tipo": "BUS",
+  "Modelo": 2014,
+  "Capacidad": 24,
+  "Propietario": "SONIA YANED IDARRAGA GONZALEZ"
+ },
+ {
+  "Placa": "TSI855",
+  "Tipo": "BUS",
+  "Modelo": 2009,
+  "Capacidad": 69,
+  "Propietario": "EDGAR DE JESUS QUINTERO ZULUAGA"
+ },
+ {
+  "Placa": "STV611",
+  "Tipo": "BUS",
+  "Modelo": 2012,
+  "Capacidad": 37,
+  "Propietario": "WILSON HERNANDO ZULUAGA ARISTIZABAL"
+ },
+ {
+  "Placa": "TSI641",
+  "Tipo": "BUS",
+  "Modelo": 2009,
+  "Capacidad": 69,
+  "Propietario": "JUAN FELIPE ZULUAGA RAMIREZ PROSPERO DE JESUS VERGARA VASQUEZ"
+ },
+ {
+  "Placa": "TPV865",
+  "Tipo": "BUS",
+  "Modelo": 2007,
+  "Capacidad": 68,
+  "Propietario": "FABER ALBERTO QUINTERO ZULUAGA"
+ },
+ {
+  "Placa": "TSY641",
+  "Tipo": "BUS",
+  "Modelo": 2013,
+  "Capacidad": 37,
+  "Propietario": "DAMARIS ELENA RESTREPO CARMONA"
+ },
+ {
+  "Placa": "TSF144",
+  "Tipo": "BUSETA",
+  "Modelo": 2008,
+  "Capacidad": 35,
+  "Propietario": "BUSES Y RUTAS S.A.S "
+ },
+ {
+  "Placa": "TSI022",
+  "Tipo": "BUSETA",
+  "Modelo": 2009,
+  "Capacidad": 38,
+  "Propietario": "BUSES Y RUTAS S.A.S "
+ },
+ {
+  "Placa": "TPX565",
+  "Tipo": "BUSETA",
+  "Modelo": 2007,
+  "Capacidad": 35,
+  "Propietario": "BUSES Y RUTAS S.A.S "
+ },
+ {
+  "Placa": "WPT149",
+  "Tipo": "BUSETA",
+  "Modelo": 2017,
+  "Capacidad": 30,
+  "Propietario": "LUIS CARLOS MARTINEZ CLAVIJO"
+ },
+ {
+  "Placa": "FVY432",
+  "Tipo": "BUS",
+  "Modelo": 2019,
+  "Capacidad": 33,
+  "Propietario": "JAIME DE JESUS URREA URREA"
+ },
+ {
+  "Placa": "TSI732",
+  "Tipo": "BUS",
+  "Modelo": 2009,
+  "Capacidad": 84,
+  "Propietario": "JUAN FELIPE ZULUAGA RAMIREZ"
+ },
+ {
+  "Placa": "SMU568",
+  "Tipo": "BUS",
+  "Modelo": 2011,
+  "Capacidad": 61,
+  "Propietario": "NELSON DE JESUS GIL MONTOYA"
+ },
+ {
+  "Placa": "TPZ712",
+  "Tipo": "BUSETA",
+  "Modelo": 2008,
+  "Capacidad": 47,
+  "Propietario": "JUAN FELIPE ZULUAGA RAMIREZ"
+ },
+ {
+  "Placa": "TPQ539",
+  "Tipo": "BUSETA",
+  "Modelo": 2005,
+  "Capacidad": 29,
+  "Propietario": "JUAN FELIPE ZULUAGA RAMIREZ"
+ },
+ {
+  "Placa": "STV975",
+  "Tipo": "BUS",
+  "Modelo": 2012,
+  "Capacidad": 61,
+  "Propietario": "JUAN FELIPE ZULUAGA RAMIREZ INVERSIONES ARBELAEZ TORRRES & "
+ },
+ {
+  "Placa": "FVY451",
+  "Tipo": "BUS",
+  "Modelo": 2019,
+  "Capacidad": 62,
+  "Propietario": "CARLOS MARIO OSORIO GONZALEZ CARLOS MARIO OSORIO GONZALEZ"
+ },
+ {
+  "Placa": "KTN024",
+  "Tipo": "BUS",
+  "Modelo": 2023,
+  "Capacidad": 74,
+  "Propietario": "DESARROLLOS Y PROGRESOS SAS "
+ },
+ {
+  "Placa": "EQS050",
+  "Tipo": "BUS",
+  "Modelo": 2018,
+  "Capacidad": 65,
+  "Propietario": "JUAN FELIPE ZULUAGA RAMIREZ"
+ },
+ {
+  "Placa": "EQS724",
+  "Tipo": "BUS",
+  "Modelo": 2017,
+  "Capacidad": 45,
+  "Propietario": "JUAN FELIPE ZULUAGA RAMIREZ DORALBA DUQUE GOMEZ"
+ },
+ {
+  "Placa": "EQS584",
+  "Tipo": "BUS",
+  "Modelo": 2017,
+  "Capacidad": 68,
+  "Propietario": "DESARROLLOS Y PROGRESOS SAS "
+ },
+ {
+  "Placa": "EQS665",
+  "Tipo": "BUS",
+  "Modelo": 2017,
+  "Capacidad": 69,
+  "Propietario": "CARLOS ALBEIRO ALZATE CARDONA"
+ },
+ {
+  "Placa": "EQT440",
+  "Tipo": "BUS",
+  "Modelo": 2018,
+  "Capacidad": 62,
+  "Propietario": "JUAN FELIPE ZULUAGA RAMIREZ"
+ },
+ {
+  "Placa": "TPW145",
+  "Tipo": "BUSETA",
+  "Modelo": 2007,
+  "Capacidad": 47,
+  "Propietario": "YENNY ANDREA HERNANDEZ BLANDON JUAN FELIPE ZULUAGA RAMIREZ"
+ },
+ {
+  "Placa": "FVY676",
+  "Tipo": "BUS",
+  "Modelo": 2020,
+  "Capacidad": 79,
+  "Propietario": "DORALBA DUQUE GOMEZ"
+ },
+ {
+  "Placa": "EQT149",
+  "Tipo": "BUS",
+  "Modelo": 2015,
+  "Capacidad": 56,
+  "Propietario": "GONZALO DE JESUS ZULUAGA GOMEZ EDUIN NORBEY PELAEZ GIRALDO"
+ },
+ {
+  "Placa": "EQT227",
+  "Tipo": "BUS",
+  "Modelo": 2015,
+  "Capacidad": 64,
+  "Propietario": "EDUIN NORBEY PELAEZ GIRALDO"
+ },
+ {
+  "Placa": "TTN442",
+  "Tipo": "BUS",
+  "Modelo": 2014,
+  "Capacidad": 69,
+  "Propietario": "CARLOS ALBEIRO ALZATE CARDONA"
+ },
+ {
+  "Placa": "EQS895",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2018,
+  "Capacidad": 19,
+  "Propietario": "INVERSIONES AFRM SAS INVERSIONES AFRM SAS"
+ },
+ {
+  "Placa": "KTN494",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2023,
+  "Capacidad": 19,
+  "Propietario": "INVERSIONES AFRM SAS INVERSIONES AFRM SAS"
+ },
+ {
+  "Placa": "KTN914",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2025,
+  "Capacidad": 19,
+  "Propietario": "INVERSIONES DARAMO S.A.S. INVERSIONES DARAMO S.A.S"
+ },
+ {
+  "Placa": "WDZ776",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2016,
+  "Capacidad": 19,
+  "Propietario": "BUSES Y RUTAS S.A.S "
+ },
+ {
+  "Placa": "WMR093",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2017,
+  "Capacidad": 19,
+  "Propietario": "INVERSIONES ARBELAEZ TORRRES & "
+ },
+ {
+  "Placa": "WDX622",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2017,
+  "Capacidad": 19,
+  "Propietario": "DESARROLLOS Y PROGRESOS SAS "
+ },
+ {
+  "Placa": "KTN495",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2023,
+  "Capacidad": 19,
+  "Propietario": "INVERSIONES AFRM SAS INVERSIONES AFRM SAS"
+ },
+ {
+  "Placa": "EQR790",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2017,
+  "Capacidad": 19,
+  "Propietario": "RAMIVEL S.A.S. RAMIVEL S.A.S."
+ },
+ {
+  "Placa": "TRN968",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2017,
+  "Capacidad": 19,
+  "Propietario": "LUZ DARY YEPES CARDONA LUZ DARY YEPES CARDONA"
+ },
+ {
+  "Placa": "EQS922",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2018,
+  "Capacidad": 19,
+  "Propietario": "INVERSIONES DARAMO S.A.S. INVERSIONES DARAMO S.A.S"
+ },
+ {
+  "Placa": "FVY522",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2019,
+  "Capacidad": 19,
+  "Propietario": "TRUAR INVESTMENT S.A.S. "
+ },
+ {
+  "Placa": "EQS921",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2018,
+  "Capacidad": 19,
+  "Propietario": "INVERSIONES AFRM SAS INVERSIONES AFRM SAS"
+ },
+ {
+  "Placa": "KTN496",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2023,
+  "Capacidad": 19,
+  "Propietario": "RAMIVEL S.A.S. RAMIVEL S.A.S."
+ },
+ {
+  "Placa": "NNL187",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2025,
+  "Capacidad": 19,
+  "Propietario": "JOSE ABRAHAM RAMIREZ GIRALDO"
+ },
+ {
+  "Placa": "FWL901",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2021,
+  "Capacidad": 19,
+  "Propietario": "JOSE ABRAHAM RAMIREZ GIRALDO"
+ },
+ {
+  "Placa": "EQS897",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2018,
+  "Capacidad": 19,
+  "Propietario": "RAMIVEL S.A.S. RAMIVEL S.A.S."
+ },
+ {
+  "Placa": "WMR005",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2017,
+  "Capacidad": 19,
+  "Propietario": "BUSES Y RUTAS S.A.S "
+ },
+ {
+  "Placa": "KTN493",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2023,
+  "Capacidad": 19,
+  "Propietario": "INVERSIONES DARAMO S.A.S. INVERSIONES DARAMO S.A.S"
+ },
+ {
+  "Placa": "FVY442",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2019,
+  "Capacidad": 19,
+  "Propietario": "DESARROLLOS Y PROGRESOS SAS "
+ },
+ {
+  "Placa": "WDY573",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2017,
+  "Capacidad": 19,
+  "Propietario": "DESARROLLOS Y PROGRESOS SAS "
+ },
+ {
+  "Placa": "KTN491",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2023,
+  "Capacidad": 19,
+  "Propietario": "RAMIVEL S.A.S. RAMIVEL S.A.S."
+ },
+ {
+  "Placa": "WMQ966",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2017,
+  "Capacidad": 19,
+  "Propietario": "BUSES Y RUTAS S.A.S "
+ },
+ {
+  "Placa": "FWK018",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2019,
+  "Capacidad": 19,
+  "Propietario": "JOSE ALEJANDRO MAYO YEPES"
+ },
+ {
+  "Placa": "FWM088",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2020,
+  "Capacidad": 19,
+  "Propietario": "LUZ DARY YEPES CARDONA LUZ DARY YEPES CARDONA"
+ },
+ {
+  "Placa": "WMR096",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2017,
+  "Capacidad": 19,
+  "Propietario": "DESARROLLOS Y PROGRESOS SAS "
+ },
+ {
+  "Placa": "TTM973",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2014,
+  "Capacidad": 19,
+  "Propietario": "BUSES Y RUTAS S.A.S "
+ },
+ {
+  "Placa": "TFQ377",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2013,
+  "Capacidad": 19,
+  "Propietario": "TRANS ELITE S.A.S "
+ },
+ {
+  "Placa": "TZS770",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2014,
+  "Capacidad": 19,
+  "Propietario": "TRANS ELITE S.A.S "
+ },
+ {
+  "Placa": "WCW842",
+  "Tipo": "BUSETA",
+  "Modelo": 2014,
+  "Capacidad": 23,
+  "Propietario": "TRANS ELITE S.A.S "
+ },
+ {
+  "Placa": "WMP862",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2015,
+  "Capacidad": 19,
+  "Propietario": "INVERSIONES TFG SAS INVERSIONES TFG SAS"
+ },
+ {
+  "Placa": "KTN583",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2023,
+  "Capacidad": 19,
+  "Propietario": "TRANS ELITE S.A.S "
+ },
+ {
+  "Placa": "TSR679",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2014,
+  "Capacidad": 19,
+  "Propietario": "INVERSIONES TFG SAS INVERSIONES TFG SAS"
+ },
+ {
+  "Placa": "KTN640",
+  "Tipo": "BUSETA",
+  "Modelo": 2023,
+  "Capacidad": 19,
+  "Propietario": "INVERSIONES TFG SAS INVERSIONES TFG SAS"
+ },
+ {
+  "Placa": "KTN960",
+  "Tipo": "MICRO BUS",
+  "Modelo": 2025,
+  "Capacidad": 19,
+  "Propietario": "INVERSIONES TFG SAS INVERSIONES TFG SAS"
+ }
+ 
+]

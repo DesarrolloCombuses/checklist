@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Verificación Vehicular</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sección de Autenticación -->
+        <div class="row justify-content-center mt-5" id="authSection">
+            <div class="col-md-6">
+                <div class="card auth-card">
+                    <div class="card-header bg-primary text-white">
+                        <ul class="nav nav-tabs card-header-tabs" id="authTabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login">Iniciar Sesión</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="register-tab" data-bs-toggle="tab" href="#register">Registrarse</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <div class="tab-content" id="authTabsContent">
+                            <!-- Pestaña de Login -->
+                            <div class="tab-pane fade show active" id="login">
+                                <form id="loginForm">
+                                    <div class="mb-3">
+                                        <label for="loginEmail" class="form-label">Correo Electrónico</label>
+                                        <input type="email" class="form-control" id="loginEmail" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="loginPassword" class="form-label">Contraseña</label>
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" id="loginPassword" required>
+                                            <button class="btn btn-outline-secondary toggle-password" type="button">
+                                                <i class="fa fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-grid gap-2">
+                                        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                                    </div>
+                                </form>
+                                <div class="mt-3 text-center">
+                                    <a href="#" id="resetPasswordLink">¿Olvidaste tu contraseña?</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Pestaña de Registro -->
+                            <div class="tab-pane fade" id="register">
+                                <form id="registerForm">
+                                    <div class="mb-3">
+                                        <label for="registerEmail" class="form-label">Correo Electrónico</label>
+                                        <input type="email" class="form-control" id="registerEmail" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="registerPassword" class="form-label">Contraseña</label>
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" id="registerPassword" required>
+                                            <button class="btn btn-outline-secondary toggle-password" type="button">
+                                                <i class="fa fa-eye"></i>
+                                            </button>
+                                        </div>
+                                        <div class="form-text">Mínimo 6 caracteres</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" id="confirmPassword" required>
+                                            <button class="btn btn-outline-secondary toggle-password" type="button">
+                                                <i class="fa fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-grid gap-2">
+                                        <button type="submit" class="btn btn-success">Registrarse</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Alertas -->
+                <div id="alertContainer" class="mt-3"></div>
+            </div>
+        </div>
+
+        <!-- Sección Protegida (tras login) -->
+        <div id="protectedContent" class="mt-4" style="display: none;">
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Bienvenido, <span id="userEmail"></span>!</h3>
+                </div>
+                <div class="card-body">
+                    <button id="logoutBtn" class="btn btn-danger mb-4">Cerrar Sesión</button>
+                    
+                    <!-- Formulario Completo de Verificación -->
+                    <form id="vehicleForm">
+                        <!-- Información General -->
+                        <h4 class="mb-3 border-bottom pb-2">INFORMACIÓN GENERAL</h4>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-3">
+                                <label for="placa" class="form-label">PLACA</label>
+                                <select class="form-select" id="placa" required>
+                                    <option value="" selected disabled>Seleccione una placa</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="tipo" class="form-label">TIPO</label>
+                                <input type="text" class="form-control" id="tipo" readonly>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="modelo" class="form-label">MODELO</label>
+                                <input type="text" class="form-control" id="modelo" readonly>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="capacidad" class="form-label">CAPACIDAD</label>
+                                <input type="text" class="form-control" id="capacidad" readonly>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="propietario" class="form-label">PROPIETARIO</label>
+                                <input type="text" class="form-control" id="propietario" readonly>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="conductor" class="form-label">CONDUCTOR</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="conductor" required>
+                                    <button class="btn btn-outline-secondary" type="button" id="scanQRBtn">
+                                        <i class="fas fa-qrcode"></i> Escanear QR
+                                    </button>
+                                </div>
+                                <div id="qrScanner" style="display:none; margin-top:10px;">
+                                    <video id="qrVideo" width="300" height="200" style="border:1px solid #ccc"></video>
+                                    <button class="btn btn-danger mt-2" id="cancelScanBtn">Cancelar escaneo</button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label">Fecha Reporte</label>
+                                <input type="text" class="form-control" id="fechaReporte" readonly>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="evaluador" class="form-label">Evaluador</label>
+                                <input type="text" class="form-control" id="evaluador" readonly>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Fecha Próxima</label>
+                                <input type="text" class="form-control" id="fechaProx" readonly>
+                            </div>
+                        </div>
+                         
+                        <!-- Agregar este campo en la sección de Información General -->
+                         <div class="row g-3 mb-4">
+                  <!-- ... otros campos ... -->
+                        <div class="col-md-3">
+                         <label for="kilometraje" class="form-label">KILOMETRAJE</label>
+                        <input type="number" class="form-control" id="kilometraje" required min="0">
+                        </div>
+                      <!-- ... otros campos ... -->
+                         </div>
+                        <!-- Verificación de Documentos -->
+                        <h4 class="mb-3 border-bottom pb-2">VERIFICACIÓN DE DOCUMENTOS</h4>
+                        <div class="table-responsive mb-4">
+                            <table class="table table-bordered">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>DOCUMENTO</th>
+                                        <th>CUMPLE</th>
+                                        <th>OBSERVACIONES</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>TARJETA DE OPERACIÓN</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="documentos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>SEGURO OBLIGATORIO SOAT</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="documentos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>SEGURO DE RESPONSABILIDAD CIVIL</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="documentos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>LICENCIA DE CONDUCCIÓN</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="documentos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>CERTIFICADO DE REVISIÓN TECNICOMECANICA Y DE GASES</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="documentos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Verificación de Equipos y Condiciones -->
+                        <h4 class="mb-3 border-bottom pb-2">VERIFICACIÓN DE EQUIPOS Y CONDICIONES</h4>
+                        <div class="table-responsive mb-4">
+                            <table class="table table-bordered">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>ELEMENTO</th>
+                                        <th>CUMPLE</th>
+                                        <th>OBSERVACIONES</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>HERRAMIENTAS</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="equipos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>BANDEROLAS</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="equipos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>LINTERNAS</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="equipos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>EXTINTOR</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="equipos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>BOTIQUÍN DE PRIMEROS AUXILIOS</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="equipos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>LUCES</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="equipos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>LIMPIABRISAS</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="equipos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>ESPEJOS INTERIORES Y EXTERIORES</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="equipos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>LLANTAS Y REPUESTOS</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="equipos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>CARROCERÍA</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="equipos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>EMBLEMAS</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="equipos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>EQUIPOS DE COMUNICACIÓN</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="equipos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>VIDRIOS</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="equipos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>MANIJAS DE PUERTAS</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="equipos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>SEGUROS DE PUERTAS</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="equipos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>ESTADO DE COJINERÍA</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="equipos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>CINTURONES DE SEGURIDAD</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="equipos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>PITO</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="equipos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>INDICADORES (ACEITE, GASOLINA, TEMPERATURA)</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="equipos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>DISPOSITIVO DE VELOCIDAD</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="equipos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>FRENOS</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="equipos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>AVISO SALIDA DE EMERGENCIA Y MARTILLO</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="equipos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>ASEO GENERAL DEL VEHÍCULO</td>
+                                        <td><input type="checkbox" class="form-check-input cumple" name="equipos"></td>
+                                        <td><input type="text" class="form-control observaciones"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                       <!-- Campo oculto para el estado -->
+                            <input type="hidden" id="estado" value="Pendiente para revisión">
+                        <!-- Botón de Envío -->
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success btn-lg">
+                                <i class="fas fa-save me-2"></i>Guardar Verificación
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+    <!-- script de lectura de qr -->
+<script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+    <!-- JS personalizado -->
+    <script src="logica.js"></script>
+</body>
+</html>
