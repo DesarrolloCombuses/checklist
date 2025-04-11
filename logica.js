@@ -17,10 +17,11 @@ const db = firebase.firestore();
 let vehiculosData = [];
 let currentVerificacionId = null;
 let qrScanner = null;
+let activeCamera = null;
+let isScanning = false;
 
 // Objeto de errores de Firebase
 const firebaseErrors = {
-    // Autenticación
     'auth/invalid-email': 'Correo electrónico inválido',
     'auth/user-disabled': 'Cuenta deshabilitada',
     'auth/user-not-found': 'Usuario no encontrado',
@@ -29,9 +30,7 @@ const firebaseErrors = {
     'auth/operation-not-allowed': 'Operación no permitida',
     'auth/weak-password': 'Contraseña demasiado débil',
     'auth/too-many-requests': 'Demasiados intentos. Intenta más tarde.',
-    // Firestore
     'permission-denied': 'No tienes permisos para esta operación',
-    // Genérico
     'default': 'Ocurrió un error inesperado'
 };
 
@@ -45,6 +44,11 @@ const userEmailSpan = document.getElementById('userEmail');
 const alertContainer = document.getElementById('alertContainer');
 const vehicleForm = document.getElementById('vehicleForm');
 const estadoDisplay = document.getElementById('estadoDisplay');
+const scanQRBtn = document.getElementById('scanQRBtn');
+const cancelScanBtn = document.getElementById('cancelScanBtn');
+const qrScannerDiv = document.getElementById('qrScanner');
+const qrVideo = document.getElementById('qrVideo');
+const conductorInput = document.getElementById('conductor');
 
 // ================= FUNCIONES AUXILIARES =================
 
@@ -122,9 +126,6 @@ async function cargarVehiculos() {
 async function cargarConductores() {
     try {
         const conductoresSnapshot = await db.collection("personal").get();
-        const conductorInput = document.getElementById('conductor');
-        
-        // Guardar nombres para validación QR
         window.conductoresRegistrados = [];
         
         conductoresSnapshot.forEach(doc => {
@@ -142,54 +143,76 @@ async function cargarConductores() {
 
 // ================= LECTOR QR PARA CONDUCTOR =================
 
-function initQRScanner() {
-    const scanBtn = document.getElementById('scanQRBtn');
-    const cancelBtn = document.getElementById('cancelScanBtn');
-    const qrScannerDiv = document.getElementById('qrScanner');
-    const qrVideo = document.getElementById('qrVideo');
-    const conductorInput = document.getElementById('conductor');
-
-    scanBtn?.addEventListener('click', () => {
+async function startQRScanner() {
+    try {
+        if (isScanning) return;
+        
         qrScannerDiv.style.display = 'block';
         conductorInput.blur();
+        isScanning = true;
         
-        if (!qrScanner) {
-            qrScanner = new Instascan.Scanner({ video: qrVideo });
-            
-            qrScanner.addListener('scan', function(content) {
-                if (window.conductoresRegistrados.includes(content)) {
-                    conductorInput.value = content;
-                    showAlert('Conductor identificado: ' + content, 'success');
-                } else {
-                    showAlert('Código QR no válido o conductor no registrado', 'warning');
-                }
-                stopQRScanner();
-            });
-            
-            Instascan.Camera.getCameras().then(function(cameras) {
-                if (cameras.length > 0) {
-                    qrScanner.start(cameras[0]);
-                } else {
-                    showAlert('No se encontraron cámaras disponibles', 'danger');
-                    qrScannerDiv.style.display = 'none';
-                }
-            }).catch(function(e) {
-                console.error(e);
-                showAlert('Error al acceder a la cámara: ' + e.message, 'danger');
-                qrScannerDiv.style.display = 'none';
-            });
+        // Detener el scanner anterior si existe
+        if (qrScanner) {
+            qrScanner.stop();
         }
-    });
-    
-    cancelBtn?.addEventListener('click', stopQRScanner);
+        
+        // Crear nueva instancia del scanner
+        qrScanner = new Instascan.Scanner({ 
+            video: qrVideo,
+            mirror: false,
+            captureImage: false,
+            backgroundScan: true,
+            refractoryPeriod: 5000,
+            scanPeriod: 1
+        });
+        
+        qrScanner.addListener('scan', function(content) {
+            if (window.conductoresRegistrados.includes(content)) {
+                conductorInput.value = content;
+                showAlert('Conductor identificado: ' + content, 'success');
+            } else {
+                showAlert('Código QR no válido o conductor no registrado', 'warning');
+            }
+            stopQRScanner();
+        });
+        
+        const cameras = await Instascan.Camera.getCameras();
+        if (cameras.length > 0) {
+            // Preferir cámara trasera en móviles
+            const rearCamera = cameras.find(c => c.name.toLowerCase().includes('back')) || 
+                             cameras.find(c => c.name.toLowerCase().includes('rear')) || 
+                             cameras[0];
+            activeCamera = rearCamera;
+            
+            await qrScanner.start(rearCamera);
+            console.log("Scanner iniciado con cámara:", rearCamera.name);
+        } else {
+            showAlert('No se encontraron cámaras disponibles', 'danger');
+            stopQRScanner();
+        }
+    } catch (error) {
+        console.error("Error al iniciar escáner:", error);
+        showAlert('Error al acceder a la cámara: ' + error.message, 'danger');
+        stopQRScanner();
+    }
 }
 
 function stopQRScanner() {
-    const qrScannerDiv = document.getElementById('qrScanner');
+    if (!isScanning) return;
+    
     qrScannerDiv.style.display = 'none';
+    isScanning = false;
     
     if (qrScanner) {
         qrScanner.stop();
+        qrVideo.srcObject = null;
+    }
+    
+    // Limpiar el video
+    const stream = qrVideo.srcObject;
+    if (stream) {
+        stream.getTracks().forEach(track => track.stop());
+        qrVideo.srcObject = null;
     }
 }
 
@@ -217,13 +240,11 @@ function validarFormularioVehiculo() {
     const conductor = document.getElementById('conductor').value.trim();
     const kilometraje = document.getElementById('kilometraje').value.trim();
     
-    // Validar conductor (no vacío)
     if (!conductor) {
         showAlert('Debe ingresar el nombre del conductor');
         return false;
     }
     
-    // Validar kilometraje (número positivo)
     if (!/^\d+$/.test(kilometraje)) {
         showAlert('El kilometraje debe ser un número positivo');
         return false;
@@ -258,6 +279,11 @@ function configurarValidacionEnTiempoReal() {
     });
 }
 
+// ================= EVENT LISTENERS =================
+
+scanQRBtn?.addEventListener('click', startQRScanner);
+cancelScanBtn?.addEventListener('click', stopQRScanner);
+
 // ================= AUTENTICACIÓN =================
 
 auth.onAuthStateChanged(user => {
@@ -275,13 +301,12 @@ auth.onAuthStateChanged(user => {
         
         document.getElementById('evaluador').value = user.email;
         
-        // Establecer estado inicial
         if (estadoDisplay) estadoDisplay.textContent = 'Pendiente para revisión';
         
         cargarVehiculos();
         cargarConductores();
-        initQRScanner();
     } else {
+        stopQRScanner();
         document.querySelector('.auth-card').style.display = 'block';
         protectedContent.style.display = 'none';
     }
