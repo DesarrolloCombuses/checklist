@@ -127,11 +127,16 @@ async function cargarConductores() {
     try {
         const conductoresSnapshot = await db.collection("personal").get();
         window.conductoresRegistrados = [];
+        const datalist = document.getElementById('conductoresList');
+        datalist.innerHTML = '';
         
         conductoresSnapshot.forEach(doc => {
             const conductorData = doc.data();
             if (conductorData.nombre) {
                 window.conductoresRegistrados.push(conductorData.nombre);
+                const option = document.createElement('option');
+                option.value = conductorData.nombre;
+                datalist.appendChild(option);
             }
         });
         
@@ -468,6 +473,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('placa')) {
         cargarVehiculos();
         configurarValidacionEnTiempoReal();
+        cargarConductores();
     }
     
     document.querySelectorAll('.toggle-password').forEach(button => {
