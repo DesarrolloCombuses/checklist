@@ -132,3 +132,24 @@ input[readonly], select[disabled] {
     margin: 0 auto;
     background: #000;
 }
+
+/* Estilo para el datalist */
+datalist {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 0 0 4px 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 1000;
+}
+
+datalist option {
+    padding: 8px;
+    cursor: pointer;
+}
+
+datalist option:hover {
+    background-color: #f8f9fa;
+}
