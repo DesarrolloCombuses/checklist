@@ -134,11 +134,13 @@
                             <div class="col-md-6">
                                 <label for="conductor" class="form-label">CONDUCTOR</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="conductor" required>
+                                    <input type="text" class="form-control" id="conductor" list="conductoresList" required>
+                                    <datalist id="conductoresList"></datalist>
                                     <button class="btn btn-outline-secondary" type="button" id="scanQRBtn">
                                         <i class="fas fa-qrcode"></i> Escanear QR
                                     </button>
                                 </div>
+                            </div>
                                 <div id="qrScanner" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; padding: 20px;">
                                     <div style="position: relative; width: 100%; height: calc(100% - 60px);">
                                         <video id="qrVideo" style="width: 100%; height: 100%; object-fit: contain;"></video>
@@ -366,3 +368,4 @@
     <script src="logica.js"></script>
 </body>
 </html>
+
